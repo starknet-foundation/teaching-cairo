@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+      "cairo coder": {
+        "command": "npx",
+        "args": ["-y", "@kasarlabs/cairo-coder-mcp"],
+        "env": {
+          "CAIRO_CODER_API_KEY": "your-api-key-here"
+        }
+      }
+    }
+  }
