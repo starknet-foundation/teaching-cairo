@@ -14,3 +14,6 @@ cairo_test = "2.11.4"
 
 [cairo]
 enable-gas = false
+
+[executable]
+function = "basecamp::fibonacci::main"

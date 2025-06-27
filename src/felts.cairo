@@ -16,7 +16,7 @@ mod tests {
         assert!(a - b == 2);
         assert!(a * b == 8);
         // assert!(a / b == 0); // integer division not supported by felts
-        //assert!(a % b == 0); // modulo not supported by felts
+        // assert!(a % b == 0); // modulo not supported by felts
     }
 
     #[test]
@@ -26,6 +26,8 @@ mod tests {
         // P = 36185027886661311069865932815214971204146870208012676262330495002472812908353;
         let p_div_by_ten = 3618502788666131106986593281521497120414687020801267626233049500247281290835;    
         p_div_by_ten * 100;
+
+        
     }
 
     #[test]
