@@ -1,3 +1,5 @@
+// This section shows how mutability, shadowing and constants work
+
 #[cfg(test)]
 mod tests {
 

@@ -1,3 +1,7 @@
+// This section shows how to refactor the default fibonacci code that 
+// comes with a new Scarb project into its own module and then how to 
+// execute to create and verify a validity proof with Stwo
+
 #[executable]
 fn main() -> u32 {
     fib(16)

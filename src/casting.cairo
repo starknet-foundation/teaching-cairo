@@ -1,3 +1,6 @@
+// This section shows how to do type casting between different integer types
+// both using shorthand methods and the Option enum with "match"
+
 #[cfg(test)]
 mod tests {
 

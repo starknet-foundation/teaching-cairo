@@ -1,4 +1,5 @@
-// the order of the functions does not matter
+// This section covers the anatomy of a function and how to return a value
+// with and without using the "return" keyword
 
 fn foo() -> u32 {
     5

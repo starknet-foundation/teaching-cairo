@@ -1,3 +1,6 @@
+// This section builds on top of "casting" where the Option enum was introduced
+// to compare the Option and Result enums and when to use each one
+
 // Option: value or nothing.
 fn find_even(x: u32) -> Option<u32> {
     if x % 2 == 0 { 

@@ -1,3 +1,8 @@
+// This section shows the different integer types and how to declare them
+// using an explict type or a suffix literal. The _ prefix is just to stop
+// the compiler from complaining about "unused variables".
+// The section also covers how to add project dependencies like Alexandria
+
 fn unsigned_integers() {
     let _a: u8 = 255;
     let _b: u16 = 65535;

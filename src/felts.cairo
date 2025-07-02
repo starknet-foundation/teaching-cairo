@@ -1,3 +1,7 @@
+// This sections introduces felt252 but focuses on showing its shortcomings
+// when used for arithmetic operations. It also shows the differences between
+// short strings and byte arrays
+
 #[cfg(test)]
 mod tests {
 
