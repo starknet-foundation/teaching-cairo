@@ -1,4 +1,4 @@
-// This section shows how to define constraints on traits
+// This section shows how to define constraints in functions
 
 #[derive(Drop)]
 struct Human {
