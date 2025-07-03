@@ -106,87 +106,77 @@ impl OrcImpl of Action<Orc> {
 
 #[cfg(test)]
 mod tests {
+    use super::*;
 
-    mod no_constraints {
-
-        use super::super::*;
-
-        fn human_vs_human_fight(ref human_1: Human, ref human_2: Human) -> Result<(), ByteArray> {
-            if !human_1.is_alive() || !human_2.is_alive() {
-                return Result::Err("One of the opponents is already dead");
-            }
-
-            if human_1.get_strength() == human_2.get_strength() {
-                human_1.hurt();
-                human_2.hurt();
-            } else if human_1.get_strength() > human_2.get_strength() {
-                human_2.hurt();
-            } else {
-                human_1.hurt();
-            }
-            
-            return Result::Ok(());
+    fn human_vs_human_fight(ref human_1: Human, ref human_2: Human) -> Result<(), ByteArray> {
+        if !human_1.is_alive() || !human_2.is_alive() {
+            return Result::Err("One of the opponents is already dead");
         }
 
-        // TODO: Add tests for orc vs orc, human vs orc, and orc vs human fights
-        // fn orc_vs_orc_fight(ref orc_1: Orc, ref orc_2: Orc) -> Result<(), ByteArray> { ... }
-        // fn human_vs_orc_fight(ref human: Human, ref orc: Orc) -> Result<(), ByteArray> { ... }
-        // fn orc_vs_human_fight(ref orc: Orc, ref human: Human) -> Result<(), ByteArray> { ... }
-
-
-        #[test]
-        fn test_human_vs_human_fight() {
-
-            let mut edric = HumanImpl::new();
-            let mut alaric = HumanImpl::new();
-
-            match human_vs_human_fight(ref edric, ref alaric) {
-                Result::Ok(()) => {
-                    assert!(edric.get_health() == 90);
-                    assert!(alaric.get_health() == 90);
-                    assert!(edric.is_alive());
-                    assert!(alaric.is_alive());
-                },
-                Result::Err(_e) => assert!(false),
-            }
+        if human_1.get_strength() == human_2.get_strength() {
+            human_1.hurt();
+            human_2.hurt();
+        } else if human_1.get_strength() > human_2.get_strength() {
+            human_2.hurt();
+        } else {
+            human_1.hurt();
         }
+        
+        return Result::Ok(());
     }
 
-    mod constraints {
+    // TODO: Add tests for orc vs orc, human vs orc, and orc vs human fights
+    // fn orc_vs_orc_fight(ref orc_1: Orc, ref orc_2: Orc) -> Result<(), ByteArray> { ... }
+    // fn human_vs_orc_fight(ref human: Human, ref orc: Orc) -> Result<(), ByteArray> { ... }
+    // fn orc_vs_human_fight(ref orc: Orc, ref human: Human) -> Result<(), ByteArray> { ... }
 
-        use super::super::*;
+    #[test]
+    fn test_human_vs_human_fight() {
 
-        fn fight<T1, T2, +Action<T1>, +Action<T2>, +Drop<T1>, +Drop<T2>>(ref opponent_1: T1, ref opponent_2: T2) -> Result<(), ByteArray>  {
-            if !opponent_1.is_alive() || !opponent_2.is_alive() {
-                return Result::Err("One of the opponents is already dead");
-            }
+        let mut edric = HumanImpl::new();
+        let mut alaric = HumanImpl::new();
 
-            if opponent_1.get_strength() == opponent_2.get_strength() {
-                opponent_1.hurt();
-                opponent_1.hurt();
-            } else if opponent_1.get_strength() > opponent_2.get_strength() {
-                opponent_2.hurt();
-            } else {
-                opponent_1.hurt();
-            }
-            
-            return Result::Ok(());
-        }
-
-        #[test]
-        fn test_fight() {
-            let mut edric = HumanImpl::new();
-            let mut gorbag = OrcImpl::new();
-
-            match fight(ref edric, ref gorbag) {
-                Result::Ok(()) => {
-                    assert!(edric.get_health() == 90);
-                    assert!(gorbag.get_health() == 100);
-                    assert!(edric.is_alive());
-                    assert!(gorbag.is_alive());
-                },
-                Result::Err(_e) => assert!(false),
-            }
+        match human_vs_human_fight(ref edric, ref alaric) {
+            Result::Ok(()) => {
+                assert!(edric.get_health() == 90);
+                assert!(alaric.get_health() == 90);
+                assert!(edric.is_alive());
+                assert!(alaric.is_alive());
+            },
+            Result::Err(_e) => assert!(false),
         }
     }
+    
+    fn fight<T1, T2, +Action<T1>, +Action<T2>, +Drop<T1>, +Drop<T2>>(ref opponent_1: T1, ref opponent_2: T2) -> Result<(), ByteArray>  {
+        if !opponent_1.is_alive() || !opponent_2.is_alive() {
+            return Result::Err("One of the opponents is already dead");
+        }
+
+        if opponent_1.get_strength() == opponent_2.get_strength() {
+            opponent_1.hurt();
+            opponent_1.hurt();
+        } else if opponent_1.get_strength() > opponent_2.get_strength() {
+            opponent_2.hurt();
+        } else {
+            opponent_1.hurt();
+        }
+        
+        return Result::Ok(());
+    }
+
+    #[test]
+    fn test_fight() {
+        let mut edric = HumanImpl::new();
+        let mut gorbag = OrcImpl::new();
+
+        match fight(ref edric, ref gorbag) {
+            Result::Ok(()) => {
+                assert!(edric.get_health() == 90);
+                assert!(gorbag.get_health() == 100);
+                assert!(edric.is_alive());
+                assert!(gorbag.is_alive());
+            },
+            Result::Err(_e) => assert!(false),
+        }
+    }   
 }
