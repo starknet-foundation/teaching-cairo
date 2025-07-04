@@ -1,6 +1,5 @@
 ---
-description: Best practices for Cairo programs code and Starknet smart contracts
-globs: 
+description: Best practices for creating, updating and answering questions about Cairo
 alwaysApply: false
 ---
 # Cairo Coding Rules

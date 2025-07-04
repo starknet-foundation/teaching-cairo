@@ -4,7 +4,7 @@ mod functions;
 mod integers;
 mod casting;
 mod result_and_option;
-// mod enums;
+mod enums;
 mod mutable;
 mod snapshots;
 mod references;
