@@ -27,10 +27,7 @@ mod tests {
     fn test_casting_to_smaller_type_that_overflows_2() {
         let a: u16 = 1000;
         let b: Option<u8> = a.try_into();
-        let c: u8 = match b {
-            Some(b) => b,
-            None => 255,
-        };
+        let c = b.unwrap_or(255);
         assert!(c == 255_u8);
     }
 
