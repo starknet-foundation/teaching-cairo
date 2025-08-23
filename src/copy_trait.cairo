@@ -28,7 +28,7 @@ mod tests {
 
     #[test]
     fn test_get_age() {
-        let person = Person {
+        let person: Person = Person {
             height: 180,
             age: 30,
         };
@@ -43,7 +43,7 @@ mod tests {
 
     #[test]
     fn test_increase_age() {
-        let person = Person {
+        let person: Person = Person {
             height: 180,
             age: 30,
         };

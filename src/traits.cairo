@@ -69,8 +69,8 @@ mod tests {
 
         #[test]
         fn test_create_characters() {
-            let mut human = HumanActionImpl::new();
-            let mut orc = OrcActionImpl::new();
+            let mut human: Human = HumanActionImpl::new();
+            let mut orc: Orc = OrcActionImpl::new();
 
             human.study();
             orc.study();
@@ -136,8 +136,8 @@ mod tests {
 
         #[test]
         fn test_create_characters() {
-            let mut human = HumanImpl::new();
-            let mut orc = OrcImpl::new();
+            let mut human: Human = HumanImpl::new();
+            let mut orc: Orc = OrcImpl::new();
 
             human.study();
             orc.study();

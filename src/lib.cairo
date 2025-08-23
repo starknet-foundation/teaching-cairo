@@ -1,6 +1,6 @@
 mod fibonacci;
-mod felts;
 mod functions;
+mod felts;
 mod integers;
 mod casting;
 mod result_and_option;

@@ -27,10 +27,10 @@ mod tests {
 
         #[test]
         fn test_simple_enum() {
-            let result = divide(10, 2);
+            let result: Result<u32, Error> = divide(10, 2);
             assert!(result == Ok(5));
 
-            let result = divide(10, 0);
+            let result: Result<u32, Error> = divide(10, 0);
             assert!(result == Err(Error::DivideByZero));
         }
     }
@@ -57,7 +57,7 @@ mod tests {
                 return Err(Error::DivideByZero);
             }
             if divisor > dividend {
-                let division = Division {
+                let division: Division = Division {
                     dividend,
                     divisor,
                 };
@@ -72,16 +72,16 @@ mod tests {
 
         #[test]
         fn test_enums_with_values() {
-            let result = divide(10, 2);
+            let result: Result<u32, Error> = divide(10, 2);
             assert!(result == Ok(5));
 
-            let result = divide(10, 0);
+            let result: Result<u32, Error> = divide(10, 0);
             assert!(result == Err(Error::DivideByZero));
 
-            let result = divide(10, 3);
+            let result: Result<u32, Error> = divide(10, 3);
             assert!(result == Err(Error::InexactDivision(1)));
 
-            let result = divide(4, 10);
+            let result: Result<u32, Error> = divide(4, 10);
             assert!(result == Err(Error::DividendSmallerThanDivisor(Division { dividend: 4, divisor: 10 })));
         }
     }

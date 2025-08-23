@@ -16,7 +16,7 @@ mod tests {
 
     #[test]
     fn test_get_age() {
-        let person = Person {
+        let person: Person = Person {
             height: 180,
             age: 30,
         };
@@ -31,11 +31,11 @@ mod tests {
 
     #[test]
     fn test_get_age_return_ownership() {
-        let person = Person {
+        let person: Person = Person {
             height: 180,
             age: 30,
         };
-        let (age, person) = get_age_return_ownership(person);
+        let (age, person): (u32, Person) = get_age_return_ownership(person);
         assert!(age == 30);
         assert!(person.age == 30);
     }
@@ -46,7 +46,7 @@ mod tests {
 
     #[test]
     fn test_get_age_with_snapshot() {
-        let person = Person {
+        let person: Person = Person {
             height: 180,
             age: 30,
         };

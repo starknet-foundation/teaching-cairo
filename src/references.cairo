@@ -17,7 +17,7 @@ mod tests {
     #[test]
     #[ignore]
     fn test_take_ownership() {
-        let mut person = Person {
+        let mut person: Person = Person {
             height: 180,    
             age: 30,
         };
@@ -32,11 +32,11 @@ mod tests {
 
     #[test]
     fn test_return_ownership() {
-        let mut person = Person {
+        let mut person: Person = Person {
             height: 180,
             age: 30,
         };
-        let person = make_person_older_return_ownership(person);
+        let person: Person = make_person_older_return_ownership(person);
         assert!(person.age == 31);
     }
 
@@ -46,7 +46,7 @@ mod tests {
 
     #[test]
     fn test_make_person_older_with_reference() {
-        let mut person = Person {
+        let mut person: Person = Person {
             height: 180,
             age: 30,
         };  
