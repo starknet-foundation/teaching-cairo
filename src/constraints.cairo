@@ -133,8 +133,8 @@ mod tests {
     #[test]
     fn test_human_vs_human_fight() {
 
-        let mut edric = HumanImpl::new();
-        let mut alaric = HumanImpl::new();
+        let mut edric: Human = HumanImpl::new();
+        let mut alaric: Human = HumanImpl::new();
 
         match human_vs_human_fight(ref edric, ref alaric) {
             Result::Ok(()) => {

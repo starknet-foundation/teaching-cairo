@@ -49,7 +49,7 @@ mod tests {
     use alexandria_math::fast_root::fast_sqrt;
 
     #[test]
-    fn test_basic_uint_arithmetic() {
+    fn test_basic_uint_math() {
         let a: u8 = 3;
         let b: u8 = 5;
 
@@ -77,7 +77,7 @@ mod tests {
     }
 
     #[test]
-    fn test_basic_int_arithmetic() {
+    fn test_basic_int_math() {
         let a: i8 = 3;
         let b: i8 = 5;
 
