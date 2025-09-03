@@ -1,6 +1,3 @@
-// This sections shows an alternative to snapshots for complex types
-// using the "Copy" trait
-
 #[cfg(test)]
 mod tests {
 

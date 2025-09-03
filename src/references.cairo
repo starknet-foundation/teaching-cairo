@@ -1,6 +1,3 @@
-// This section builds on top of the "snapshots" module to show how
-// to use references
-
 #[cfg(test)]
 mod tests {
 

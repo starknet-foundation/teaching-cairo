@@ -8,7 +8,7 @@ source = "registry+https://scarbs.xyz/"
 checksum = "sha256:1e08ebba0ed9f7217b8efc283d2ad41730257cf41a47ca88a94fb0fafad22e9e"
 
 [[package]]
-name = "basecamp"
+name = "workshop"
 version = "0.1.0"
 dependencies = [
  "alexandria_math",

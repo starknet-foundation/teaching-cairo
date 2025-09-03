@@ -1,6 +1,3 @@
-// This section shows how ownership works, how to use snapshots, 
-// the desnap operator and how to create a custom types with structs
-
 #[cfg(test)]
 mod tests {
 
